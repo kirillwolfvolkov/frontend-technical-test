@@ -1,0 +1,48 @@
+.sidebar {
+  background: rgba(117, 125, 146, 0.5);
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  transition: all .3s;
+
+  .menu {
+    position: absolute;
+    height: 100vh;
+    width: 300px;
+    top: 0;
+    z-index: 10;
+    right: 0;
+    background: white;
+    transform: translateX(100%);
+    transition: all .3s;
+  }
+
+  &_shown {
+    visibility: visible;
+    opacity: 1;
+    .menu {
+      transform: translateX(0);
+    }
+  }
+
+  &-container {
+    padding: 0 20px;
+  }
+
+  .close {
+    width: 30px;
+    height: 30px;
+    margin: 15px;
+    margin-left: auto;
+    cursor: pointer;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}

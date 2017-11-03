@@ -1,0 +1,37 @@
+.events {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 5px 10px;
+
+  &__sidebar {
+    text-align: center;
+
+    &-selection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px 10px;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    &-name {
+      font-size: 24px;
+    }
+
+    &-price {
+      font-size: 20px;
+      padding: 20px;
+    }
+
+    &-button {
+      background: #686868;
+      color: #fff;
+      width: 70px;
+      margin: 0 auto;
+      border-radius: 5px;
+      border: 0;
+      padding: 5px 10px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+[include]
+.*/src/.*
+
+[ignore]
+.*/node_modules/.*
+.*/__tests__/.*
+.*/coverage/.*
+
+
+[libs]
+flow-typed
+
+[options]
+module.file_ext=.scss
+module.file_ext=.js
+module.file_ext=.svg
+module.file_ext=.jsp
+module.file_ext=.png
+
+module.name_mapper='^containers\(\/?.*\)$' -> '<PROJECT_ROOT>/src/containers/\1'
+module.name_mapper='^data-layer\(\/?.*\)$' -> '<PROJECT_ROOT>/src/data-layer/\1'
+module.name_mapper='^utils\(\/?.*\)$' -> '<PROJECT_ROOT>/src/utils/\1'
+
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssueµ

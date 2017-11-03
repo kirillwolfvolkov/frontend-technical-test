@@ -1,0 +1,17 @@
+button {
+    outline: none;
+    background: none;
+    border: 1px solid gray;
+    padding: 5px 30px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &.active {
+        background: green;
+    }
+}
+
+p {
+    margin: 0;
+}

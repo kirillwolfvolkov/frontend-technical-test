@@ -1,0 +1,13 @@
+.event {
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  &-title {
+    text-align: center;
+    padding: 15px;
+    font-size: 22px;
+    border-bottom: 2px solid gray;
+  }
+}
