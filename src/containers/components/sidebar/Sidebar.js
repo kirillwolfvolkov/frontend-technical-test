@@ -5,7 +5,7 @@ import { hideMenu } from "data-layer/menu/actions";
 import cross from "./cross.png";
 import "./Sidebar.scss";
 
-const Sidebar = (props) => {
+export const Sidebar = (props) => {
 
 	return (
 		<div className={cx("sidebar", {

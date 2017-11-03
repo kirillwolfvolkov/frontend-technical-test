@@ -1,14 +1,18 @@
 import React, { Component } from "react";
-import { isEmpty, map, filter } from "lodash";
+import { isEmpty, map, filter, isEqual } from "lodash";
 import { connect } from "react-redux";
 import { loadEvents, removeSelection } from "data-layer/events/actions";
 import Event from "./event/Event";
 import Sidebar from "containers/components/sidebar/Sidebar";
 import "./Events.scss";
 
-class Events extends Component {
+export class Events extends Component {
 	componentDidMount() {
 		this.props.loadEvents();
+	}
+
+	shouldComponentUpdate(nextProps) {
+		return !isEqual(this.props, nextProps);
 	}
 
 	getSelectedSelections = () => {
@@ -18,7 +22,7 @@ class Events extends Component {
 	}
 
 	render() {
-		const { data } = this.props;
+		const { data, selected } = this.props;
 
 		if (isEmpty(data)) {
 			return null;
@@ -26,6 +30,7 @@ class Events extends Component {
 
 		return (
 			<div className="events">
+				{!isEmpty(selected) &&
 				<Sidebar className="events__sidebar">
 					{map(this.getSelectedSelections(), selection => (
 						<div key={selection.id} className="events__sidebar-selection">
@@ -39,7 +44,7 @@ class Events extends Component {
 							</button>
 						</div>
 					))}
-				</Sidebar>
+				</Sidebar>}
 				<div>
 					{map(data.events, event => {
 						return !isEmpty(event.markets) && <Event key={event.id} {...event}/>
